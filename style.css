@@ -1,0 +1,187 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  
+  
+  .topleft {
+    position: absolute;
+    top: 0;
+    left: 16px;
+  }
+  
+  .bottomleft {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+  }
+  
+  
+  hr {
+    margin: auto;
+    width: 40%;
+  }
+  .header {
+    padding: 10px;
+    text-align: center;
+    background: rgb(236, 231, 231);
+    color: black;
+  }
+  .middle {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .bgimg {
+    background-color: rgb(236, 231, 231);
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: black;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+  }
+  
+  
+  /* Increase the font size of the heading */
+  .header h2 {
+    font-size: 40px;
+  }
+  
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  .button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+  }
+  
+  .button5:hover {
+    background-color:black;
+    color: white;
+  }
+  body { font: 12px Arial;}
+
+path { 
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+.grid line {
+  stroke: lightgrey;
+  stroke-opacity: 0.7;
+  shape-rendering: crispEdges;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+#tooltip {  
+    position: absolute;
+    padding: 2px;
+    pointer-events: none;
+    border-radius: 4px;
+    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.25);
+    font: 12px sans-serif;
+    color: #f1f1f1;
+    line-height: 1;
+font-weight: bold;
+padding: 12px;
+background: rgba(0, 0, 0, 0.8);
+color: #fff;
+border-radius: 2px;
+} 
+/* Create three equal columns that floats next to each other */
+.column {
+float: left;
+width: 33.33%;
+padding: 2px;
+height: 450px; /* Should be removed. Only for demonstration */
+}
+.row{
+border: 1px solid black;
+border-radius: 8px;
+padding: 5px;
+}
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+* {
+box-sizing: border-box;
+}
+.FixedHeightContainer
+{
+float:left;
+height: 600px;
+width:1000px; 
+border: 1px solid black;
+border-radius: 8px;
+padding: 5px;
+}
+.Content , .pieLegend
+{
+height:550px;
+overflow:auto;
+background:#fff;
+
+}
+.FixedLegenedContainer
+{
+float:left;
+height: 600px;
+width:230px; 
+border: 1px solid black;
+border-radius: 8px;
+padding: 5px;
+}
+h2 {
+display: table-cell;
+vertical-align: middle;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 16px;
+    text-align: center;
+  }

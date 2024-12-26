@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+</style>
+
+<head>
+  <link rel='stylesheet' href='style.css'>
+<script src="barChart.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+</head>
+
+<div class="row">
+  <div class="flex-container">
+    <div class="flex-child">
+      <div id="country_active">Select Country: </div>
+    </div>
+    <div class="flex-child">
+      <input type="checkbox" id="showAll" checked="true">Show All Countries 
+    </div>
+    
+  </div>
+    <div class="column">
+      <h2 style="text-align: center;">Active Cases Per Country</h2>
+      <div id="active"></div>
+    </div>
+    <div class="column" >
+      <h2 style="text-align: center;">Recovered Cases Per Country</h2>
+      <div id="recovered"></div>
+    </div>
+    <div class="column" >
+      <h2 style="text-align: center;">Deaths Per Country</h2>
+      <div id="deaths"></div>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="grid-item">
+      <div class="FixedHeightContainer">
+        <h2 style="text-align: center;">Number of Active Cases per Country</h2> 
+        <div class="Content">
+        </div>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="FixedLegenedContainer">
+        <h2 style="text-align: center;">Countries</h2>
+        <div class="pieLegend">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<div id="tooltip"></div>
+
+<script>
+    var tooltip = d3.select("#tooltip").attr('opacity' , 0);
+d3.csv("data/Country Wise.csv").then(function(data){
+
+  //create dropdown
+  drawDropDown(data)
+   
+  //check for checkbox changes
+   const checkbox = document.getElementById('showAll')
+   checkbox.addEventListener('change', (event) => {
+        if (event.currentTarget.checked) {
+          DrawPieChart('#deaths' ,  'Deaths' , data)
+          DrawPieChart('#active' ,  'Active' , data)
+          DrawPieChart('#recovered' ,  'Recovered' , data)
+        }
+        })
+
+    //add countries names
+      addLegend(data)
+    //draw pie charts
+      DrawPieChart('#deaths' ,  'Deaths' , data)
+      DrawPieChart('#active' ,  'Active' , data)
+      DrawPieChart('#recovered' ,  'Recovered' , data)
+      //draw bar chart
+      drawBarChart(data)
+
+
+    })
+
+    
+</script>
+</html>
